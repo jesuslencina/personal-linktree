@@ -109,9 +109,19 @@
         margin: 1rem 0;
     }
 
-    @media screen and (orientation: landscape) {
-        section {
-            width: 60vw;
+    @media screen and (min-width: 920px) and (orientation: landscape) {
+        .section-container {
+            margin-top: 10rem;
+            width: 70vw;
+
+            h2 {
+                margin: 3rem;
+            }
+
+            section {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 </style>
