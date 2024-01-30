@@ -10,18 +10,23 @@
                 bg: this.item.bg,
                 delay: `${this.index / 3}s`
             }
+        },
+        methods: {
+            redirect() {
+                window.open(this.item.url)
+            }
         }
     }
 </script>
 
 <template>
-    <article>
+    <article @click="redirect">
         <div class="img-container">
             <img :src="item.icon" width="25" height="25" :alt="item.iconAlt" />
         </div>
         <div>
             <h3>
-                <a :href="item.url" target="_blank"> {{ item.label }}</a>
+                {{ item.label }}
             </h3>
         </div>
     </article>
@@ -29,13 +34,12 @@
 
 <style lang="scss" scoped>
     article {
-        position: relative;
         animation: pop-in 0.5s ease-in-out backwards;
         transition: transform 0.25s ease-in-out;
         animation-delay: v-bind(delay);
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: space-between;
         height: 4rem;
         background: v-bind(bg);
         padding: 0.5rem 1.5rem;
@@ -45,8 +49,6 @@
         cursor: pointer;
 
         .img-container {
-            position: absolute;
-            left: 20px;
             display: flex;
             place-content: center;
             align-items: center;
@@ -58,13 +60,7 @@
 
         h3 {
             margin: 0;
-        }
-
-        a {
-            display: block;
-
             color: v-bind(color);
-            text-decoration: none;
         }
 
         &:hover {
