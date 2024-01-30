@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "sass": "^1.70.0",
+    "uniqolor": "^1.1.1",
     "vite-plugin-qrcode": "^0.2.3",
     "vue": "^3.4.15"
   },
