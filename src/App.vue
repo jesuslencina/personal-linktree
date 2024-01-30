@@ -27,38 +27,29 @@
 
 <template>
     <main>
-        <div class="main-content">
-            <header @click="changeColor">
-                <h1>Welcome!! {{ salutation }}</h1>
-            </header>
-            <input type="color" name="color-picker" id="colorPicker" v-model="this.color" />
+        <header @click="changeColor">
+            <h1>Welcome!! {{ salutation }}</h1>
+        </header>
+        <input type="color" name="color-picker" id="colorPicker" v-model="this.color" />
 
-            <div class="section-container">
-                <h2>Where to find me</h2>
-                <section>
-                    <LinkItem v-for="(link, index) of links" v-bind:key="index" :item="link" :index="index" />
-                </section>
-            </div>
+        <div class="section-container">
+            <h2>Where to find me</h2>
+            <section>
+                <LinkItem v-for="(link, index) of links" v-bind:key="index" :item="link" :index="index" />
+            </section>
         </div>
+
         <footer>Icons from <a href="https://www.freepik.com/">Freepik</a></footer>
     </main>
 </template>
 
 <style lang="scss" scoped>
     main {
-        min-height: 100vh;
+        min-height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .main-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin: 0;
     }
 
     header {
@@ -85,7 +76,6 @@
     .section-container {
         width: 80%;
         display: flex;
-        margin-top: 1rem;
         flex-direction: column;
 
         h2 {
@@ -111,7 +101,6 @@
 
     @media screen and (min-width: 920px) and (orientation: landscape) {
         .section-container {
-            margin-top: 10rem;
             width: 70vw;
 
             h2 {
