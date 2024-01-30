@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <Transition>
+    <Transition name="fade">
         <div v-if="isOpen" @click.self="toggleHandler" @wheel.prevent @touchmove.prevent @scroll.prevent class="modal-container">
             <slot />
         </div>
@@ -16,6 +16,16 @@
 </template>
 
 <style lang="scss" scoped>
+    .fade-enter-active {
+        opacity: 0;
+    }
+    .fade-enter-to {
+        animation: fade-in 0.25s ease-in-out;
+    }
+    .fade-leave-to {
+        animation: fade-in 0.25s ease-in-out reverse;
+    }
+
     .modal-container {
         z-index: 2;
         position: fixed;
