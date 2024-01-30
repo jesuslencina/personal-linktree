@@ -1,37 +1,45 @@
 <script>
-    import { redirect } from "@/utils/redirect"
+    import { guides } from "@/assets/data"
+    import ExpandableModal from "./ExpandableModal.vue"
+    import ModalLinksList from "./ModalLinksList.vue"
 
     export default {
         props: {
-            item: Object,
-            index: Number
+            delayInt: Number,
+            accentHex: String
         },
         data() {
             return {
-                color: this.item.color,
-                bg: this.item.bg,
-                delay: `${this.index / 3}s`
+                guides,
+                accent: this.accent,
+                modalOpen: false,
+                delay: `${this.delayInt / 3}s`
             }
         },
         methods: {
-            sendToUrl() {
-                redirect(this.item.url, true)
+            toggleModal() {
+                this.modalOpen = !this.modalOpen
+            },
+            redirect() {
+                window.open(this.item.url)
             }
-        }
+        },
+        components: { ExpandableModal, ModalLinksList }
     }
 </script>
 
 <template>
-    <article @click="sendToUrl">
+    <article @click="toggleModal">
         <div class="img-container">
-            <img :src="item.icon" width="25" height="25" :alt="item.iconAlt" />
+            <img src="/img/link.webp" width="25" height="25" alt="Link emoji" />
         </div>
         <div>
-            <h3>
-                {{ item.label }}
-            </h3>
+            <h3>Content</h3>
         </div>
     </article>
+    <ExpandableModal :isOpen="modalOpen" :toggleHandler="toggleModal">
+        <ModalLinksList :items="guides" :closeHandler="toggleModal" :accent="accentHex" />
+    </ExpandableModal>
 </template>
 
 <style lang="scss" scoped>
@@ -43,9 +51,9 @@
         align-items: center;
         justify-content: space-between;
         height: 4rem;
-        background: v-bind(bg);
+        background: #fff;
         padding: 0.5rem 1.5rem;
-        border: 1pt solid v-bind(color);
+        border: 1pt solid #1a1717;
         border-radius: 12px;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
         cursor: pointer;
@@ -56,13 +64,13 @@
             align-items: center;
             width: 45px;
             height: 45px;
-            background-color: #fff;
+            border: 1pt solid #1a1717;
             border-radius: 99px;
         }
 
         h3 {
             margin: 0;
-            color: v-bind(color);
+            color: #1a1717;
         }
 
         &:hover {

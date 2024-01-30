@@ -29,6 +29,15 @@ export const links = [
         label: "@yisubot",
         url: "https://www.instagram.com/yisubot/",
         color: "#fff",
-        bg: "linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)"
+        bg: "linear-gradient(190deg, rgba(88,81,219,1) 0%, rgba(131,58,180,1) 26%, rgba(253,29,29,1) 64%, rgba(252,176,69,1) 100%)"
+    }
+]
+
+export const guides = [
+    {
+        icon: "img/guides/coquette.png",
+        iconAlt: "Ribbon emoji",
+        label: "Compu Coquette",
+        url: "https://funny-candy-d10.notion.site/Compu-Coquette-8fcdc4c2e9974118989dc77d54305573?pvs=4"
     }
 ]

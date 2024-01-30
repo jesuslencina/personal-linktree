@@ -4,6 +4,7 @@
     import { randomIndex } from "./utils/randomIndex"
 
     import { links } from "./assets/data"
+    import GuidesItem from "./components/GuidesItem.vue"
 
     const possibleSalutations = [":)", ":3", "c:", ">.<", "uwu", ":D", ":p"]
 
@@ -21,7 +22,7 @@
                 this.salutation = possibleSalutations[randomIndex(possibleSalutations.length)]
             }
         },
-        components: { LinkItem }
+        components: { LinkItem, GuidesItem }
     }
 </script>
 
@@ -38,6 +39,7 @@
             <h2>Where to find me</h2>
             <section>
                 <LinkItem v-for="(link, index) of links" v-bind:key="index" :item="link" :index="index" />
+                <GuidesItem :delayInt="links.length" :accentHex="color" />
             </section>
         </div>
 
@@ -66,6 +68,7 @@
     }
 
     .text {
+        margin-top: 2rem;
         text-align: center;
 
         h1 {
@@ -99,6 +102,7 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            margin-bottom: 2rem;
         }
     }
 
@@ -133,9 +137,8 @@
             }
 
             section {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }
