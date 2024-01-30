@@ -64,7 +64,7 @@
     header {
         width: 100%;
         background-color: v-bind(color);
-        transition: background-color 0.5s ease-in-out;
+        transition: background-color 1s ease-in-out;
         text-align: center;
 
         h1 {
@@ -89,6 +89,7 @@
         flex-direction: column;
 
         h2 {
+            transition: color 1s ease-in-out;
             color: v-bind(color);
             text-align: center;
         }
@@ -103,6 +104,7 @@
 
     footer,
     footer a {
+        transition: color 1s ease-in-out;
         color: v-bind(color);
         margin: 1rem 0;
     }
