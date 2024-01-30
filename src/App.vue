@@ -27,9 +27,11 @@
 
 <template>
     <main>
-        <header @click="changeColor">
-            <h1>Welcome!! {{ salutation }}</h1>
-        </header>
+        <div class="top-line" />
+        <div class="text">
+            <h1 @click="changeColor">Hello world!!</h1>
+            <p>Here's where I leave my internet stuff {{ salutation }}</p>
+        </div>
         <input type="color" name="color-picker" id="colorPicker" v-model="this.color" />
 
         <div class="section-container">
@@ -39,7 +41,10 @@
             </section>
         </div>
 
-        <footer>Icons from <a href="https://www.freepik.com/">Freepik</a></footer>
+        <footer>
+            <strong>Jesús Lencina <img width="16" height="16" src="/img/no-copyright.svg" alt="No copyright" /> 2024</strong>
+            <p>Icons from <a href="https://www.freepik.com/">Freepik</a></p>
+        </footer>
     </main>
 </template>
 
@@ -52,15 +57,20 @@
         align-items: center;
     }
 
-    header {
+    .top-line {
         width: 100%;
+        height: 0.75rem;
         background-color: v-bind(color);
         transition: background-color 1s ease-in-out;
         text-align: center;
+    }
+
+    .text {
+        text-align: center;
 
         h1 {
-            padding: 4rem 1rem 1rem;
-            color: white;
+            transition: color 1s ease-in-out;
+            color: v-bind(color);
             margin: 0;
         }
     }
@@ -92,11 +102,26 @@
         }
     }
 
-    footer,
-    footer a {
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         transition: color 1s ease-in-out;
         color: v-bind(color);
         margin: 1rem 0;
+
+        img {
+            transform: translateY(3px);
+        }
+
+        strong,
+        p {
+            margin: 0.25rem;
+        }
+
+        a {
+            color: inherit;
+        }
     }
 
     @media screen and (min-width: 920px) and (orientation: landscape) {
@@ -108,8 +133,9 @@
             }
 
             section {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
             }
         }
     }

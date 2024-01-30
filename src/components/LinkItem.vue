@@ -66,5 +66,9 @@
         &:hover {
             transform: scale(1.05) rotate(-3deg);
         }
+
+        @media screen and (min-width: 920px) and (orientation: landscape) {
+            width: 15%;
+        }
     }
 </style>
