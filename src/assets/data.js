@@ -33,11 +33,4 @@ export const links = [
     }
 ]
 
-export const guides = [
-    {
-        icon: "img/guides/coquette.png",
-        iconAlt: "Ribbon emoji",
-        label: "Compu Coquette",
-        url: "https://funny-candy-d10.notion.site/Compu-Coquette-8fcdc4c2e9974118989dc77d54305573?pvs=4"
-    }
-]
+export const guides = []

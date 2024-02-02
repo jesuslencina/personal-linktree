@@ -23,6 +23,7 @@
 <template>
     <div class="modal-content">
         <section>
+            <p class="empty" v-if="!items.length">Nothing here at the moment...</p>
             <article v-for="(item, index) of items" v-bind:key="index" @click="sendToUrl(item.url)">
                 <img width="40" height="40" :src="item.icon" :alt="item.iconAlt" />
                 <strong>{{ item.label }}</strong>
@@ -44,6 +45,14 @@
         height: 80vh;
 
         border-radius: 14px;
+    }
+
+    .empty {
+        margin-top: 2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
     }
 
     article {
@@ -84,6 +93,20 @@
         .modal-content {
             width: 30vw;
             height: 50vh;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .modal-content {
+            background-color: black;
+        }
+
+        article {
+            border-color: #fff;
+        }
+
+        button.close {
+            color: black;
         }
     }
 </style>

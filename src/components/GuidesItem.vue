@@ -51,7 +51,7 @@
         align-items: center;
         justify-content: space-between;
         height: 4rem;
-        background: #fff;
+        background-color: #fff;
         padding: 0.5rem 1.5rem;
         border: 1pt solid #1a1717;
         border-radius: 12px;
@@ -79,6 +79,19 @@
 
         @media screen and (min-width: 920px) and (orientation: landscape) {
             width: 16vw;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            background-color: transparent;
+            border-color: #fff;
+
+            .img-container {
+                border-color: #fff;
+            }
+
+            h3 {
+                color: #fff;
+            }
         }
     }
 </style>

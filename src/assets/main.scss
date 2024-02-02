@@ -5,6 +5,11 @@
 body {
     margin: 0;
     background-color: #dfdcdc;
+
+    @media (prefers-color-scheme: dark) {
+        background: #161616;
+        color: #dfdcdc;
+    }
 }
 
 @keyframes pop-in {
