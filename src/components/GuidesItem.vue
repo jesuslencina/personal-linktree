@@ -1,30 +1,16 @@
-<script>
+<script setup>
+    import { defineProps, ref } from "vue"
     import { guides } from "@/assets/data"
     import ExpandableModal from "./ExpandableModal.vue"
     import ModalLinksList from "./ModalLinksList.vue"
 
-    export default {
-        props: {
-            delayInt: Number,
-            accentHex: String
-        },
-        data() {
-            return {
-                guides,
-                accent: this.accent,
-                modalOpen: false,
-                delay: `${this.delayInt / 3}s`
-            }
-        },
-        methods: {
-            toggleModal() {
-                this.modalOpen = !this.modalOpen
-            },
-            redirect() {
-                window.open(this.item.url)
-            }
-        },
-        components: { ExpandableModal, ModalLinksList }
+    const { delayInt, accentHex } = defineProps(["delayInt", "accentHex"])
+    const modalOpen = ref(false)
+
+    const delay = ref(`${delayInt / 3}s`)
+
+    const toggleModal = () => {
+        modalOpen.value = !modalOpen.value
     }
 </script>
 

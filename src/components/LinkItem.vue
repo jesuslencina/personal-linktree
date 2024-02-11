@@ -1,23 +1,15 @@
-<script>
+<script setup>
+    import { defineProps } from "vue"
     import { redirect } from "@/utils/redirect"
 
-    export default {
-        props: {
-            item: Object,
-            index: Number
-        },
-        data() {
-            return {
-                color: this.item.color,
-                bg: this.item.bg,
-                delay: `${this.index / 3}s`
-            }
-        },
-        methods: {
-            sendToUrl() {
-                redirect(this.item.url, true)
-            }
-        }
+    const { item, index } = defineProps(["item", "index"])
+
+    const bg = item.bg
+    const color = item.color
+    const delay = `${index / 3}s`
+
+    const sendToUrl = () => {
+        redirect(item.url, true)
     }
 </script>
 

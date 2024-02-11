@@ -1,28 +1,14 @@
-<script>
-    import LinkItem from "./components/LinkItem.vue"
+<script setup>
+    import { ref } from "vue"
     import { randomColor } from "./utils/randomColor"
-    import { randomIndex } from "./utils/randomIndex"
-
     import { links } from "./assets/data"
+    import LinkItem from "./components/LinkItem.vue"
     import GuidesItem from "./components/GuidesItem.vue"
 
-    const possibleSalutations = [":)", ":3", "c:", ">.<", "uwu", ":D", ":p"]
+    const color = ref(randomColor)
 
-    export default {
-        data() {
-            return {
-                links,
-                color: randomColor,
-                salutation: possibleSalutations[randomIndex(possibleSalutations.length)]
-            }
-        },
-        methods: {
-            changeColor() {
-                document.getElementById("colorPicker").click()
-                this.salutation = possibleSalutations[randomIndex(possibleSalutations.length)]
-            }
-        },
-        components: { LinkItem, GuidesItem }
+    const changeColor = () => {
+        document.getElementById("colorPicker").click()
     }
 </script>
 
@@ -31,9 +17,9 @@
         <div class="top-line" />
         <div class="text">
             <h1 @click="changeColor">Hello world!!</h1>
-            <p>Here's where I leave my internet stuff {{ salutation }}</p>
+            <p>Here's where I leave my internet stuff.</p>
         </div>
-        <input type="color" name="color-picker" id="colorPicker" v-model="this.color" />
+        <input type="color" name="color-picker" id="colorPicker" v-model="color" />
 
         <div class="section-container">
             <h2>Where to find me</h2>

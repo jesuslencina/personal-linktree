@@ -1,10 +1,7 @@
-<script>
-    export default {
-        props: {
-            isOpen: Boolean,
-            toggleHandler: Function
-        }
-    }
+<script setup>
+    import { defineProps } from "vue"
+
+    const { isOpen, toggleHandler } = defineProps(["isOpen", "toggleHandler"])
 </script>
 
 <template>

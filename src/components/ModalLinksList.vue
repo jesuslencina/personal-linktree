@@ -1,22 +1,11 @@
-<script>
+<script setup>
+    import { defineProps } from "vue"
     import { redirect } from "@/utils/redirect"
 
-    export default {
-        props: {
-            items: Array,
-            closeHandler: Function,
-            accent: String
-        },
+    const { items, closeHandler, accent } = defineProps(["items", "closeHandler", "accent"])
 
-        data() {
-            return { color: this.accent }
-        },
-
-        methods: {
-            sendToUrl(url) {
-                redirect(url, true)
-            }
-        }
+    const sendToUrl = (url) => {
+        redirect(url, true)
     }
 </script>
 
@@ -81,7 +70,7 @@
         all: unset;
         display: block;
         padding: 1rem 0;
-        background-color: v-bind(color);
+        background-color: v-bind(accent);
         border-radius: 0 0 12px 12px;
         text-align: center;
         color: #fff;
