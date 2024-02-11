@@ -1,35 +1,13 @@
-# personal-linktree
+# Personal Linktree
 
-This template should help get you started developing with Vue 3 in Vite.
+Just a simple Vue site to have my own linktree-like solution for my personal links and content across the web. Data is stored locally at the moment, so it's entirely front-end.
 
-## Recommended IDE Setup
+### Libraries used
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+-   Sass
+-   Uniqolor
+-   Vercel Analytics
 
-## Customize configuration
+### View it live
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[www.jesuslencina.ar](https://www.jesuslencina.ar/)
