@@ -30,8 +30,15 @@
         </div>
 
         <footer>
-            <strong>Jesús Lencina <img width="16" height="16" src="/img/no-copyright.svg" alt="No copyright" /> 2024</strong>
-            <p>Icons from <a href="https://www.freepik.com/">Freepik</a></p>
+            <strong>
+                Jesús Lencina
+                <img width="16" height="16" src="/img/no-copyright.svg" alt="No copyright" />
+                2024
+            </strong>
+            <p>
+                Icons from
+                <a href="https://www.freepik.com/">Freepik</a>
+            </p>
         </footer>
     </main>
 </template>

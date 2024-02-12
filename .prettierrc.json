@@ -5,5 +5,7 @@
   "singleQuote": false,
   "printWidth": 160,
   "trailingComma": "none",
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSameLine": true,
   "vueIndentScriptAndStyle": true
 }
