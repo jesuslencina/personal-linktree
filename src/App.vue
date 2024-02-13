@@ -1,9 +1,14 @@
 <script setup>
     import { ref } from "vue"
+    import { useI18n } from "vue-i18n"
+
     import { randomColor } from "./utils/randomColor"
     import { links } from "./assets/data"
+
     import LinkItem from "./components/LinkItem.vue"
     import GuidesItem from "./components/GuidesItem.vue"
+
+    const { t } = useI18n()
 
     const color = ref(randomColor)
 
@@ -16,13 +21,13 @@
     <main>
         <div class="top-line" />
         <div class="text">
-            <h1 @click="changeColor">Hello world!!</h1>
-            <p>Here's where I leave my internet stuff.</p>
+            <h1 @click="changeColor">{{ t("hello_world") }}!</h1>
+            <p>{{ t("desc") }}</p>
         </div>
         <input type="color" name="color-picker" id="colorPicker" v-model="color" />
 
         <div class="section-container">
-            <h2>Where to find me</h2>
+            <h2>{{ t("links") }}</h2>
             <section>
                 <LinkItem v-for="(link, index) of links" v-bind:key="index" :item="link" :index="index" />
                 <GuidesItem :delayInt="links.length" :accentHex="color" />
@@ -36,7 +41,7 @@
                 2024
             </strong>
             <p>
-                Icons from
+                {{ t("icons_by") }}
                 <a href="https://www.freepik.com/">Freepik</a>
             </p>
         </footer>

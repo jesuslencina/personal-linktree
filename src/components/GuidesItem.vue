@@ -1,8 +1,13 @@
 <script setup>
     import { defineProps, ref } from "vue"
+    import { useI18n } from "vue-i18n"
+
     import { guides } from "@/assets/data"
+
     import ExpandableModal from "./ExpandableModal.vue"
     import ModalLinksList from "./ModalLinksList.vue"
+
+    const { t } = useI18n()
 
     const { delayInt, accentHex } = defineProps(["delayInt", "accentHex"])
     const modalOpen = ref(false)
@@ -20,7 +25,7 @@
             <img src="/img/link.webp" width="25" height="25" alt="Link emoji" />
         </div>
         <div>
-            <h3>Content</h3>
+            <h3>{{ t("content") }}</h3>
         </div>
     </article>
     <ExpandableModal :isOpen="modalOpen" :toggleHandler="toggleModal">
