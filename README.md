@@ -7,6 +7,7 @@ Just a simple Vue site to have my own linktree-like solution for my personal lin
 -   Sass
 -   Uniqolor
 -   Vercel Analytics
+-   Vue i18n
 
 ### View it live
 
