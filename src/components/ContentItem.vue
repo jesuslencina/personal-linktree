@@ -2,12 +2,13 @@
     import { defineProps, ref } from "vue"
     import { useI18n } from "vue-i18n"
 
-    import { guides } from "@/assets/data"
-
     import ExpandableModal from "./ExpandableModal.vue"
     import ModalLinksList from "./ModalLinksList.vue"
+    import { getData } from "@/utils/getData"
 
     const { t } = useI18n()
+
+    const content = ref(await getData("content"))
 
     const { delayInt, accentHex } = defineProps(["delayInt", "accentHex"])
     const modalOpen = ref(false)
@@ -29,7 +30,7 @@
         </div>
     </article>
     <ExpandableModal :isOpen="modalOpen" :toggleHandler="toggleModal">
-        <ModalLinksList :items="guides" :closeHandler="toggleModal" :accent="accentHex" />
+        <ModalLinksList :items="content" :closeHandler="toggleModal" :accent="accentHex" />
     </ExpandableModal>
 </template>
 
