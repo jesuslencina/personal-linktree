@@ -24,17 +24,20 @@
             </div>
             <input type="color" name="color-picker" id="colorPicker" v-model="color" />
         </div>
-
-        <suspense>
-            <template #default>
-                <LinksSection :color="color" />
-            </template>
-            <template #fallback>
-                <div class="loading-screen">
-                    <strong>{{ t("loading") }}</strong>
-                </div>
-            </template>
-        </suspense>
+        <Transition mode="out-in" name="shrink">
+            <KeepAlive>
+                <Suspense>
+                    <template #default>
+                        <LinksSection :color="color" />
+                    </template>
+                    <template #fallback>
+                        <div class="loading-screen">
+                            <img src="/img/loading.gif" :alt="t('loading')" width="80" />
+                        </div>
+                    </template>
+                </Suspense>
+            </KeepAlive>
+        </Transition>
     </main>
 </template>
 
@@ -82,9 +85,17 @@
     }
 
     .loading-screen {
+        min-height: 50vh;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .shrink-leave-active {
+        animation: shrink 0.2s ease-out;
+    }
+    .shrink-leave-to {
+        transform: scale(0);
     }
 
     @media screen and (min-width: 920px) and (orientation: landscape) {

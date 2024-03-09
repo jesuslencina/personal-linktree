@@ -28,6 +28,7 @@
 
 <style lang="scss" scoped>
     .section-container {
+        min-height: 50vh;
         width: 80%;
         display: flex;
         flex-direction: column;
