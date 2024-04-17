@@ -1,18 +1,18 @@
 export const texts = {
     en: {
         loading: "Loading...",
-        hello_world: "Hello world!",
-        desc: "This is where I leave my internet stuff",
-        links: "Links",
-        content: "Content",
-        icons_by: "Icons by"
+        find_me_on: "Find me on:",
+        more_stuff: "More stuff",
+        icons_by: "Icons by",
+        nothing_here: "Nothing here at the moment...",
+        close: "Close"
     },
     es: {
         loading: "Cargando...",
-        hello_world: "Hola mundo!",
-        desc: "Acá voy dejando mis cositas de internet",
-        links: "Enlaces",
-        content: "Contenido",
-        icons_by: "Íconos de"
+        find_me_on: "Encontrame en:",
+        more_stuff: "Más cosas",
+        icons_by: "Íconos de",
+        nothing_here: "Nada acá por el momento...",
+        close: "Cerrar"
     }
 }

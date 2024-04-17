@@ -1,8 +1,11 @@
 <script setup>
     import { defineProps } from "vue"
+    import { useI18n } from "vue-i18n"
     import { redirect } from "@/utils/redirect"
 
     const { items, closeHandler, accent } = defineProps(["items", "closeHandler", "accent"])
+
+    const { t } = useI18n()
 
     const sendToUrl = (url) => {
         redirect(url, true)
@@ -12,14 +15,14 @@
 <template>
     <div class="modal-content">
         <section>
-            <p class="empty" v-if="!items.length">Nothing here at the moment...</p>
+            <p class="empty" v-if="!items.length">{{ t("nothing_here") }}</p>
             <article v-for="(item, index) of items" v-bind:key="index" @click="sendToUrl(item.url)">
                 <img width="40" height="40" :src="item.icon" :alt="item.iconAlt" />
                 <strong>{{ item.label }}</strong>
                 <img width="25" height="25" src="/img/arrow.svg" alt="Redirect arrow icon" />
             </article>
         </section>
-        <button class="close" @click="closeHandler">Close</button>
+        <button class="close" @click="closeHandler">{{ t("close") }}</button>
     </div>
 </template>
 
@@ -41,7 +44,7 @@
         display: block;
         width: 100%;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     article {

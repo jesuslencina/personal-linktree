@@ -26,7 +26,7 @@
             <img src="/img/link.webp" width="25" height="25" alt="Link emoji" />
         </div>
         <div>
-            <h3>{{ t("content") }}</h3>
+            <h3>{{ t("more_stuff") }}</h3>
         </div>
     </article>
     <ExpandableModal :isOpen="modalOpen" :toggleHandler="toggleModal">

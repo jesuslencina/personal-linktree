@@ -17,7 +17,7 @@
 
 <template>
     <div class="section-container">
-        <h2>{{ t("links") }}</h2>
+        <h2>{{ t("find_me_on") }}</h2>
         <section>
             <LinkItem v-for="(link, index) of links" v-bind:key="index" :item="link" :index="index" />
             <ContentItem :delayInt="links.length" :accentHex="color" />
@@ -44,7 +44,6 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
     }
 

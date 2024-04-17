@@ -27,7 +27,6 @@
         align-items: center;
         transition: color 1s ease-in-out;
         color: v-bind(color);
-        margin: 1rem 0;
 
         img {
             transform: translateY(3px);

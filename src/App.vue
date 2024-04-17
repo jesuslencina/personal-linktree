@@ -15,13 +15,9 @@
 
 <template>
     <main>
-        <div class="title-content">
-            <div class="top-line" />
+        <div class="top-content">
+            <div class="top-line" @click="changeColor" />
 
-            <div class="text">
-                <h1 @click="changeColor">{{ t("hello_world") }}!</h1>
-                <p>{{ t("desc") }}</p>
-            </div>
             <input type="color" name="color-picker" id="colorPicker" v-model="color" />
         </div>
         <Transition mode="out-in" name="shrink">
@@ -43,36 +39,25 @@
 
 <style lang="scss" scoped>
     main {
-        min-height: 90vh;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 20% 80%;
+        grid-template-rows: 5% 95%;
         justify-items: center;
         align-items: start;
     }
 
-    .title-content {
+    .top-content {
         display: flex;
         flex-direction: column;
         width: 100%;
 
         .top-line {
             width: 100%;
-            height: 0.75rem;
+            height: 1.25rem;
             background-color: v-bind(color);
             transition: background-color 1s ease-in-out;
             text-align: center;
-        }
-
-        .text {
-            margin-top: 2rem;
-            text-align: center;
-
-            h1 {
-                transition: color 1s ease-in-out;
-                color: v-bind(color);
-                margin: 0;
-            }
+            cursor: pointer;
         }
     }
 
@@ -99,6 +84,10 @@
     }
 
     @media screen and (min-width: 920px) and (orientation: landscape) {
+        main {
+            grid-template-rows: 10% 85%;
+        }
+
         .section-container {
             width: 70vw;
 
